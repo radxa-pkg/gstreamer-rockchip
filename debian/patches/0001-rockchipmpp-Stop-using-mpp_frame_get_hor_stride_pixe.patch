@@ -1,0 +1,37 @@
+From 31ee8bd8a6438ee4030291f3cf0de51fab5995e5 Mon Sep 17 00:00:00 2001
+From: Jeffy Chen <jeffy.chen@rock-chips.com>
+Date: Wed, 30 Jul 2025 18:35:05 +0800
+Subject: [PATCH] rockchipmpp: Stop using mpp_frame_get_hor_stride_pixel
+
+Fix:
+https://redmine.rock-chips.com/issues/569368
+
+Change-Id: Ifee0e605e1114e70e328a1c6a61248170a1fd255
+Signed-off-by: Jeffy Chen <jeffy.chen@rock-chips.com>
+---
+ gst/rockchipmpp/gstmpp.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/gst/rockchipmpp/gstmpp.c b/gst/rockchipmpp/gstmpp.c
+index 188af1e..7d7b875 100644
+--- a/gst/rockchipmpp/gstmpp.c
++++ b/gst/rockchipmpp/gstmpp.c
+@@ -203,10 +203,14 @@ gst_mpp_rga_info_from_mpp_frame (rga_info_t * info, MppFrame mframe)
+   MppBuffer mbuf = mpp_frame_get_buffer (mframe);
+   guint width = mpp_frame_get_width (mframe);
+   guint height = mpp_frame_get_height (mframe);
+-  guint hstride = mpp_frame_get_hor_stride_pixel (mframe);
++  guint hstride = mpp_frame_get_hor_stride (mframe);
+   guint vstride = mpp_frame_get_ver_stride (mframe);
+   RgaSURF_FORMAT rga_format = gst_mpp_mpp_format_to_rga_format (mpp_format);
+ 
++  struct gst_mpp_format *format = GST_MPP_GET_FORMAT (mpp, mpp_format);
++  if (format)
++    hstride = hstride / format->pixel_stride0;
++
+   g_return_val_if_fail (mbuf, FALSE);
+ 
+   info->fd = mpp_buffer_get_fd (mbuf);
+-- 
+2.20.1
+
