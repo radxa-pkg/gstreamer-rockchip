@@ -5,6 +5,7 @@ Source: https://github.com/rockchip-linux/gstreamer-rockchip
 Files: *
 Copyright: 2016 Randy Li <randy.li@rock-chips.com>
 Copyright: 2021 Jeffy Chen <jeffy.chen@rock-chips.com>
+Copyright: © 2025 Radxa Computer Co., Ltd
 License: LGPL-2.0+
  This package is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -28,6 +29,7 @@ License: LGPL-2.0+
 Files: debian/*
 Copyright: 2016 Randy Li <randy.li@rock-chips.com>
 Copyright: 2021 Jeffy Chen <jeffy.chen@rock-chips.com>
+Copyright: © 2025 Radxa Computer Co., Ltd
 License: LGPL-2.0+
  This package is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public

@@ -5,5 +5,15 @@
 /files
 /tmp
 /source
+
 /.debhelper
 /debhelper-build-stamp
+/.debhelper
+/debhelper-build-stamp
+/files
+/linux-*/
+/u-boot-*/
+/*.debhelper.log
+/*.*.debhelper
+/*.substvars
+/tmp
