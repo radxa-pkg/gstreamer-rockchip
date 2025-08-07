@@ -26,5 +26,5 @@ Section: libs
 Priority: optional
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Description: The Gstreamer plugins for Rockchip platforms.
+Description: Gstreamer plugins for Rockchip platforms
  This package provides the gstreamer-rockchip.

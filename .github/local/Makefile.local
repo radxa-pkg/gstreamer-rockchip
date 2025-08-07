@@ -1,0 +1,5 @@
+devcontainer_setup: install_radxa_apt
+
+.PHONY: install_radxa_apt
+install_radxa_apt:
+	curl https://radxa-repo.github.io/rk3399-bookworm-test/install.sh | sh

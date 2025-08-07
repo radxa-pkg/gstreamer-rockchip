@@ -23,9 +23,6 @@ License: LGPL-2.0+
  On Debian systems, the complete text of the GNU Lesser General
  Public License can be found in "/usr/share/common-licenses/LGPL-2".
 
-# If you want to use GNU Lesser General Public License 2.1, 3.0, or GNU
-# Library General Public License 2.0 for the /debian/* files use
-# the following clauses, or change it to suit. Delete these two lines
 Files: debian/*
 Copyright: 2016 Randy Li <randy.li@rock-chips.com>
 Copyright: 2021 Jeffy Chen <jeffy.chen@rock-chips.com>
@@ -46,8 +43,3 @@ License: LGPL-2.0+
  .
  On Debian systems, the complete text of the GNU Lesser General
  Public License can be found in "/usr/share/common-licenses/LGPL-2".
-
-# Please also look if there are files or directories which have a
-# different copyright/license attached and list them here.
-# Please avoid picking licenses with terms that are more restrictive than the
-# packaged work, as it may make Debian's contributions unacceptable upstream.

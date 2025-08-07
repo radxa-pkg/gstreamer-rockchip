@@ -12,7 +12,8 @@ all: build
 devcontainer_setup:
 	sudo dpkg --add-architecture arm64
 	sudo apt-get update
-	sudo apt-get build-dep . -y
+	sudo apt-get install -y crossbuild-essential-arm64 binfmt-support qemu-user-static
+	sudo apt-get build-dep . -y --host-architecture arm64
 
 #
 # Test
@@ -87,7 +88,7 @@ dch: debian/changelog
 
 .PHONY: deb
 deb: debian
-	$(CUSTOM_DEBUILD_ENV) debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags-from-file $(PWD)/debian/common-lintian-overrides -- %p_%v_*.changes" --no-sign -b
+	$(CUSTOM_DEBUILD_ENV) debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags-from-file $(PWD)/debian/common-lintian-overrides -- %p_%v_*.changes" --no-sign -b -aarm64 -Pcross
 
 .PHONY: release
 release:
