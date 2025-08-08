@@ -1,8 +1,12 @@
-gstreamer1.0-rockchip (1.14-5) UNRELEASED; urgency=medium
+gstreamer1.0-rockchip (1.14-5) stable; urgency=medium
 
+  [ "Radxa Computer Co., Ltd" ]
   * Initial Radxa release
 
- -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 07 Aug 2025 09:55:38 +0000
+  [ Zhaoming Luo ]
+  * fix: add a patch fixing a mpp bug
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 08 Aug 2025 11:25:56 +0000
 
 gstreamer1.0-rockchip (1.14-4) stable; urgency=medium
 
